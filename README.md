@@ -14,7 +14,7 @@ Enrollment forcasting is a repository containing machine learning models to pred
 
 - **Follow installation steps:**  
   - Press **Enter** to continue.  
-  - Scroll through the agreement and accept it.  
+  - Hold enter through the agreement and type yes 
   - Accept the default installation path or choose a custom one.  
 
 - **Tell the machine where Conda is located:**  
