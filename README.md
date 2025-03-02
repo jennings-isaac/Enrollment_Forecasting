@@ -34,4 +34,23 @@ Enrollment forcasting is a repository containing machine learning models to pred
   `conda activate envname`  
 
 - **Install required Python libraries:**  
-  `pip install torch torchvision matplotlib scikit-learn pandas PyYAML wandb`  
+  `pip install torch torchvision matplotlib scikit-learn pandas PyYAML wandb`
+
+# Jupyter Notebook  
+
+- **Install Jupyter Notebook:**  
+  `pip install jupyter`  
+  *(Installs the package that makes Jupyter Notebooks work.)*  
+
+- **Create a new notebook (opens automatically):**  
+  `jupyter notebook`  
+
+- **Open an existing notebook (opens automatically):**  
+  `jupyter notebook your_notebook.ipynb`  
+  *(Replace `your_notebook.ipynb` with the actual notebook name.)*  
+
+- **Important Notes:**  
+  - Ensure that your Conda environment, created in the steps above, is **activated** before starting Jupyter Notebook.  
+  - This ensures that the notebook has access to the installed packages.  
+  - Place the notebook in the **root of your repository** so you can easily import submodules.  
+
