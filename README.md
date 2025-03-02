@@ -4,9 +4,8 @@ Enrollment forcasting is a repository containing machine learning models to pred
 
 # Installation
 
-Conda Setup for Linux Terminal 
-
-  ```wget https://repo.anaconda.com/miniconda/Miniconda3-latest- Linux-x86_64.sh ```  
+-Conda Setup for Linux Terminal 
+  -```wget https://repo.anaconda.com/miniconda/Miniconda3-latest- Linux-x86_64.sh ```  
   (download conda package from internet)
 
   
