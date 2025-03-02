@@ -5,7 +5,7 @@ Enrollment forcasting is a repository containing machine learning models to pred
 # Installation
 
 Conda Setup for Linux Terminal 
-  wget https://repo.anaconda.com/miniconda/Miniconda3-latest- Linux-x86_64.sh  (download conda package from internet)
+  ```wget https://repo.anaconda.com/miniconda/Miniconda3-latest- Linux-x86_64.sh ```  (download conda package from internet)
   bash Miniconda3-latest-Linux-x86_64.sh  (run conda installation script)
   Press Enter, Scroll through the agreement, …, accept default installation path 
   source $your/path/to/miniconda$/etc/profile.d/conda.sh  (tell the machine to know where conda is located) make sure to add own path
