@@ -5,7 +5,7 @@ import numpy as np
 warnings.filterwarnings('ignore')
 class Curate:
     @staticmethod
-    def main():
+    def main(data):
         def visualization_curation(enrollment_data):
 
             # Make time columns readable and datetime objects 
@@ -135,8 +135,8 @@ class Curate:
 
 
 
-        enrollment_data = pd.read_csv('data/WWU_course_info.csv', encoding='ISO-8859-1')
-        vis_data = visualization_curation(enrollment_data)
+
+        vis_data = visualization_curation(data)
         vis_data.to_csv('data/visualization_data.csv', index=False)
 
 

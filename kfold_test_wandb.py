@@ -1,12 +1,14 @@
 import pandas as pd
 import random
+import wandb
 from sklearn.neural_network import MLPRegressor
 from sklearn.metrics import r2_score, root_mean_squared_error
 import matplotlib.pyplot as plt
 
 class kfold:
     @staticmethod
-    def main(model, verbose):
+    def main(model):
+        wandb.init(project="kfold-validation", name="MLP_kfold")
 
         quarters  = ['data/WI14.csv', 'data/SU14.csv', 'data/FA14.csv', 'data/FA20.csv', 
                 'data/WI15.csv', 'data/SP15.csv', 'data/SU15.csv', 'data/FA15.csv', 
@@ -28,6 +30,7 @@ class kfold:
         fold_indices = []
 
         for i in range(0, len(folds), 4):
+            print("Current Test #", (i/4)+1)
             val_set = folds[i: i+4]
             fold_indices.append(" ".join([file.replace("data/", "").replace(".csv", "") for file in val_set]))
             
@@ -40,11 +43,18 @@ class kfold:
             merged_val_set = merged_val_set.drop_duplicates()
 
 
+            print(f"Total train files: {len(train_set)}")
+
+
+            print(f"Merged Train Set Size: {merged_train_set.shape}")
+            print(f"Merged Validation Set Size: {merged_val_set.shape}")
+
             # Remove duplicates
             merged_train_set = merged_train_set.drop_duplicates()
             merged_val_set = merged_val_set.drop_duplicates()
 
-        
+            print(f"Train Set After Deduplication: {merged_train_set.shape}")
+            print(f"Validation Set After Deduplication: {merged_val_set.shape}")
 
             merged_train_set.to_csv(f"data/inv_fold_{int((i/4)+1)}.csv", index=False)
             merged_val_set.to_csv(f"data/fold_{int((i/4)+1)}.csv", index=False)
@@ -55,41 +65,56 @@ class kfold:
             
             y_train = merged_train_set['ACTUAL_ENROLL']
             X_train = merged_train_set.drop(columns=['ACTUAL_ENROLL'])
-
+            
+            print(X_val.shape, "val shape")
+            print(X_train.shape, "train shape")
             model.fit(X_train, y_train)
             y_pred = model.predict(X_val)
             rmse = root_mean_squared_error(y_val, y_pred)
             r2 = r2_score(y_val, y_pred)
-            if verbose:
-                print("Current Test #", (i/4)+1)
-                print(f'Validation RMSE: {rmse:.2f}')
-                print(f'R² Score: {r2:.2f}')
+            
+            print(f'Validation RMSE: {rmse:.2f}')
+            print(f'R² Score: {r2:.2f}')
             
             rmse_scores.append(rmse)
             r2_scores.append(r2)
             
-            
+            wandb.log({"fold": (i/4)+1, "rmse": rmse, "r2": r2})
             print()
         
-        print("Average Score:", sum(r2_scores) / len(r2_scores))
+        print(sum(r2_scores) / len(r2_scores))
         
-        # fig, ax1 = plt.subplots()
-        # ax1.plot(fold_indices, rmse_scores, marker='o', label='RMSE', linestyle='-', color='b')
-        # ax1.set_xlabel('Fold Number')
-        # ax1.set_ylabel('RMSE', color='b')
-        # ax1.tick_params(axis='y', labelcolor='b')
-        # ax1.set_title('Validation RMSE and R² Score per Fold')
-        # ax1.grid(True)
+        fig, ax1 = plt.subplots()
+        ax1.plot(fold_indices, rmse_scores, marker='o', label='RMSE', linestyle='-', color='b')
+        ax1.set_xlabel('Fold Number')
+        ax1.set_ylabel('RMSE', color='b')
+        ax1.tick_params(axis='y', labelcolor='b')
+        ax1.set_title('Validation RMSE and R² Score per Fold')
+        ax1.grid(True)
 
-        # ax2 = ax1.twinx()
-        # ax2.plot(fold_indices, r2_scores, marker='o', label='R²', linestyle='-', color='r')
-        # ax2.set_ylabel('R² Score', color='r')
-        # ax2.tick_params(axis='y', labelcolor='r')
+        ax2 = ax1.twinx()
+        ax2.plot(fold_indices, r2_scores, marker='o', label='R²', linestyle='-', color='r')
+        ax2.set_ylabel('R² Score', color='r')
+        ax2.tick_params(axis='y', labelcolor='r')
         
-        # ax1.legend(loc='upper left')
-        # ax2.legend(loc='upper right')
+        ax1.legend(loc='upper left')
+        ax2.legend(loc='upper right')
         
-        # ax1.set_xticks(fold_indices)
-        # ax1.set_xticklabels(fold_indices, rotation=45)
-        # plt.tight_layout()
-        # plt.show()
+        ax1.set_xticks(fold_indices)
+        ax1.set_xticklabels(fold_indices, rotation=45)
+        plt.tight_layout()
+        plt.show()
+
+        wandb.finish()
+    
+    model = MLPRegressor(
+        hidden_layer_sizes=(100,),
+        activation='tanh',
+        solver='adam',
+        learning_rate='adaptive',
+        max_iter=500,
+        alpha=0.0001,
+        verbose=False
+    )
+    main(model)
+
