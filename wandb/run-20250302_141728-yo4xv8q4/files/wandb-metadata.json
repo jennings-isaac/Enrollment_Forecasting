@@ -1,0 +1,31 @@
+{
+  "os":  "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+  "python":  "CPython 3.10.0",
+  "startedAt":  "2025-03-02T22:17:28.142356Z",
+  "program":  "Client_Tutorial.ipynb",
+  "codePath":  "Client_Tutorial.ipynb",
+  "git":  {
+    "remote":  "https://github.com/jennings-isaac/Enrollment_Forecasting.git",
+    "commit":  "22b3200b65139c3c972f62d1c86324a05f97685a"
+  },
+  "email":  "jennini2@wwu.edu",
+  "root":  "/mnt/c/Users/isaac/OneDrive/Desktop/Enrollment_Forecasting",
+  "host":  "DESKTOP-TC1IH3O",
+  "executable":  "/home/isaac_jennings/miniconda3/envs/isaac/bin/python",
+  "codePathLocal":  "Client_Tutorial.ipynb",
+  "cpu_count":  4,
+  "cpu_count_logical":  8,
+  "disk":  {
+    "/":  {
+      "total":  "1081101176832",
+      "used":  "14331342848"
+    }
+  },
+  "memory":  {
+    "total":  "3995099136"
+  },
+  "cpu":  {
+    "count":  4,
+    "countLogical":  8
+  }
+}

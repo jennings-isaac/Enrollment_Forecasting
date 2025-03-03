@@ -1,0 +1,111 @@
+Current Test # 1.0
+Total train files: 36
+Merged Train Set Size: (1317, 87)
+Merged Validation Set Size: (174, 87)
+Train Set After Deduplication: (1317, 87)
+Validation Set After Deduplication: (174, 87)
+(174, 86) val shape
+(1317, 86) train shape
+Validation RMSE: 7.21
+R² Score: 0.46
+
+Current Test # 2.0
+Total train files: 36
+Merged Train Set Size: (1390, 87)
+Merged Validation Set Size: (101, 87)
+Train Set After Deduplication: (1390, 87)
+Validation Set After Deduplication: (101, 87)
+(101, 86) val shape
+(1390, 86) train shape
+Validation RMSE: 6.08
+R² Score: 0.45
+
+Current Test # 3.0
+Total train files: 36
+Merged Train Set Size: (1365, 87)
+Merged Validation Set Size: (126, 87)
+Train Set After Deduplication: (1365, 87)
+Validation Set After Deduplication: (126, 87)
+(126, 86) val shape
+(1365, 86) train shape
+Validation RMSE: 5.18
+R² Score: 0.45
+
+Current Test # 4.0
+Total train files: 36
+Merged Train Set Size: (1338, 87)
+Merged Validation Set Size: (153, 87)
+Train Set After Deduplication: (1338, 87)
+Validation Set After Deduplication: (153, 87)
+(153, 86) val shape
+(1338, 86) train shape
+Validation RMSE: 5.62
+R² Score: 0.63
+
+Current Test # 5.0
+Total train files: 36
+Merged Train Set Size: (1349, 87)
+Merged Validation Set Size: (142, 87)
+Train Set After Deduplication: (1349, 87)
+Validation Set After Deduplication: (142, 87)
+(142, 86) val shape
+(1349, 86) train shape
+Validation RMSE: 6.26
+R² Score: 0.59
+
+Current Test # 6.0
+Total train files: 36
+Merged Train Set Size: (1388, 87)
+Merged Validation Set Size: (103, 87)
+Train Set After Deduplication: (1388, 87)
+Validation Set After Deduplication: (103, 87)
+(103, 86) val shape
+(1388, 86) train shape
+Validation RMSE: 9.21
+R² Score: 0.29
+
+Current Test # 7.0
+Total train files: 36
+Merged Train Set Size: (1368, 87)
+Merged Validation Set Size: (123, 87)
+Train Set After Deduplication: (1368, 87)
+Validation Set After Deduplication: (123, 87)
+(123, 86) val shape
+(1368, 86) train shape
+Validation RMSE: 5.84
+R² Score: 0.66
+
+Current Test # 8.0
+Total train files: 36
+Merged Train Set Size: (1316, 87)
+Merged Validation Set Size: (175, 87)
+Train Set After Deduplication: (1316, 87)
+Validation Set After Deduplication: (175, 87)
+(175, 86) val shape
+(1316, 86) train shape
+Validation RMSE: 5.38
+R² Score: 0.48
+
+Current Test # 9.0
+Total train files: 36
+Merged Train Set Size: (1311, 87)
+Merged Validation Set Size: (180, 87)
+Train Set After Deduplication: (1311, 87)
+Validation Set After Deduplication: (180, 87)
+(180, 86) val shape
+(1311, 86) train shape
+Validation RMSE: 8.18
+R² Score: 0.45
+
+Current Test # 10.0
+Total train files: 36
+Merged Train Set Size: (1277, 87)
+Merged Validation Set Size: (214, 87)
+Train Set After Deduplication: (1277, 87)
+Validation Set After Deduplication: (214, 87)
+(214, 86) val shape
+(1277, 86) train shape
+Validation RMSE: 7.13
+R² Score: 0.51
+
+0.49659556189351567
