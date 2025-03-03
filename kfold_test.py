@@ -1,8 +1,6 @@
 import pandas as pd
 import random
-from sklearn.neural_network import MLPRegressor
 from sklearn.metrics import r2_score, root_mean_squared_error
-import matplotlib.pyplot as plt
 
 class kfold:
     @staticmethod
@@ -64,32 +62,13 @@ class kfold:
                 print("Current Test #", (i/4)+1)
                 print(f'Validation RMSE: {rmse:.2f}')
                 print(f'R² Score: {r2:.2f}')
+                print()
             
             rmse_scores.append(rmse)
             r2_scores.append(r2)
             
             
-            print()
         
         print("Average Score:", sum(r2_scores) / len(r2_scores))
         
-        # fig, ax1 = plt.subplots()
-        # ax1.plot(fold_indices, rmse_scores, marker='o', label='RMSE', linestyle='-', color='b')
-        # ax1.set_xlabel('Fold Number')
-        # ax1.set_ylabel('RMSE', color='b')
-        # ax1.tick_params(axis='y', labelcolor='b')
-        # ax1.set_title('Validation RMSE and R² Score per Fold')
-        # ax1.grid(True)
-
-        # ax2 = ax1.twinx()
-        # ax2.plot(fold_indices, r2_scores, marker='o', label='R²', linestyle='-', color='r')
-        # ax2.set_ylabel('R² Score', color='r')
-        # ax2.tick_params(axis='y', labelcolor='r')
-        
-        # ax1.legend(loc='upper left')
-        # ax2.legend(loc='upper right')
-        
-        # ax1.set_xticks(fold_indices)
-        # ax1.set_xticklabels(fold_indices, rotation=45)
-        # plt.tight_layout()
-        # plt.show()
+ 

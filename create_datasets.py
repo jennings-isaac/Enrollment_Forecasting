@@ -1,5 +1,5 @@
 import pandas as pd
-
+import random
 class CreateData:
     @staticmethod
     def main():
@@ -7,25 +7,56 @@ class CreateData:
 
             # Split by both Quarter and year
             terms = ['Winter', 'Spring', 'Summer', 'Fall']
-            years = [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
 
+            # Extract years dynamically
+            year_columns = [col for col in data.columns if col.startswith("YEAR_")]
+            years = sorted([int(col.split("_")[1]) for col in year_columns])
+
+            quarter_data = {}
             for year in years:
                 for term in terms:
                     term_key = f'TERM_{term}'
                     year_key = f'YEAR_{year}'
-                    filtered_data = data[
-                        (data[term_key] == True) &
-                        (data[year_key] == True)
-                    ]
-                    filtered_data.to_csv(f'data/{term[:2].upper()}{year % 100}.csv', index=False)
-
-
+                    if term_key in data.columns and year_key in data.columns:
+                        filtered_data = data[
+                            (data[term_key] == True) &
+                            (data[year_key] == True)
+                        ]
+                        if not filtered_data.empty: 
+                            quarter_data[f'data/{term[:2].upper()}{year % 100}.csv'] = filtered_data
 
 
             # 4 random quarter, have been removed from train set
-            test_set = ['data/SU19.csv', 'data/SP14.csv', 'data/SP19.csv', 'data/SP16.csv'] # Never EVER train on this
+            test_set_keys = set(random.sample(list(quarter_data.keys()), 4))
+            test_set = pd.concat([quarter_data[key] for key in test_set_keys], ignore_index=True)
+            test_set.to_csv("data/test_set.csv", index=False)
 
 
-            merged_test_set = pd.concat([pd.read_csv(file) for file in test_set], ignore_index=True)
 
-            merged_test_set.to_csv('data/randomized_test_set.csv', index=False)
+            training_quarters = [key for key in quarter_data.keys() if key not in test_set_keys]
+
+            
+            random.shuffle(training_quarters)
+            fold_indices = []
+
+
+            for i in range(0, len(training_quarters), 4):
+                val_set = training_quarters[i: i+4]
+                fold_indices.append(" ".join([file.replace("data/", "").replace(".csv", "") for file in val_set]))
+                
+                train_set = [file for file in training_quarters if file not in val_set]
+
+                merged_train_set = pd.concat([quarter_data[key] for key in train_set], ignore_index=True)
+                merged_val_set = pd.concat([quarter_data[key] for key in val_set], ignore_index=True)
+
+                # Remove duplicates
+                merged_train_set = merged_train_set.drop_duplicates()
+                merged_val_set = merged_val_set.drop_duplicates()
+
+                merged_train_set.to_csv(f"data/inv_fold_{int((i/4)+1)}.csv", index=False)
+                merged_val_set.to_csv(f"data/fold_{int((i/4)+1)}.csv", index=False)
+
+
+                
+                
+    
