@@ -59,3 +59,4 @@ Enrollment forcasting is a repository containing machine learning models to pred
 
 ## Training
 
+This repo contains 2 models. One using sklearn MLP regressor and the other using a pytorch DNN. Both take in the same curated data, and predict the actual enrollment for a given class. To use new data from the WWU, use the Client_Tutorial and plug in the new data. To change or upgrade the models or data curation use –INSERT NAME OF QUOCS NOTEBOOK–.
