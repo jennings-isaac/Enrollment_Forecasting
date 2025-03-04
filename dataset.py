@@ -4,13 +4,16 @@ from torch.utils.data import Dataset
 # from sklearn.preprocessing import LabelEncoder
 
 class EnrollmentDataset(Dataset):
-    def __init__(self, data_path):
-        # Load the dataset from a CSV file
-        self.data = pd.read_csv(data_path)
+    def __init__(self, data_paths):
+        # Load multiple CSV files if necessary
+        if isinstance(data_paths, list):
+            self.data = pd.concat([pd.read_csv(f) for f in data_paths], ignore_index=True)
+        else:
+            self.data = pd.read_csv(data_paths)
 
-        # create features (predictors) and targets (reactors)
-        self.features = self.data.drop(columns=['ACTUAL_ENROLL'])
-        self.targets = self.data["ACTUAL_ENROLL"]      
+        # Extract features and targets
+        self.features = self.data.drop(columns=['ACTUAL_ENROLL']).values
+        self.targets = self.data["ACTUAL_ENROLL"].values     
  
     def __len__(self):
         # Return the total number of data points

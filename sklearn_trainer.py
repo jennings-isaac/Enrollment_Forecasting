@@ -1,16 +1,24 @@
 from sklearn.metrics import r2_score
 from sklearn.metrics import root_mean_squared_error, mean_squared_error
-
+import os
+from glob import glob
 from dataset import EnrollmentDataset
 from sklearn_model import sklearnModel
 
 class Trainer:
     @staticmethod
-    def main():
-        train_data_path = 'data/inv_fold_1.csv'
-        train_dataset = EnrollmentDataset(train_data_path)
+    def main(model_type):
+        
+        data_dir = 'data/'
+        file_pattern = os.path.join(data_dir, 'partition_*.csv')
+        all_partitions = glob(file_pattern)
 
-        val_data_path = 'data/fold_1.csv'
+        val_data_path = 'data/partition_1.csv'
+
+        train_partitions = [i for i in all_partitions if i != val_data_path]
+
+        train_dataset = EnrollmentDataset(train_partitions)
+
         val_dataset = EnrollmentDataset(val_data_path)
         
         # Convert the entire dataset from torch tensors to numpy arrays
@@ -20,7 +28,7 @@ class Trainer:
         
 
         # Initialize the model
-        model_type = 'mlp_regressor'
+        # model_type = 'mlp_regressor'
         # model_type = 'random_forest'  
         model = sklearnModel(input_dim, model_type)
 
@@ -32,8 +40,6 @@ class Trainer:
         # Evaluate the model on the validation set
         y_pred = model.evaluate(X_val)
 
-        
-        
         # Calculate Root Mean Squared Error (RMSE)
         rmse = root_mean_squared_error(y_val, y_pred)
         print(f'Validation RMSE: {rmse:.2f}')

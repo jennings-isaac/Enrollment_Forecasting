@@ -42,19 +42,14 @@ class CreateData:
 
             for i in range(0, len(training_quarters), 4):
                 val_set = training_quarters[i: i+4]
-                fold_indices.append(" ".join([file.replace("data/", "").replace(".csv", "") for file in val_set]))
-                
-                train_set = [file for file in training_quarters if file not in val_set]
+                fold_indices.append(" ".join([file.replace("data/", "").replace(".csv", "") for file in val_set]))             
 
-                merged_train_set = pd.concat([quarter_data[key] for key in train_set], ignore_index=True)
                 merged_val_set = pd.concat([quarter_data[key] for key in val_set], ignore_index=True)
 
                 # Remove duplicates
-                merged_train_set = merged_train_set.drop_duplicates()
                 merged_val_set = merged_val_set.drop_duplicates()
 
-                merged_train_set.to_csv(f"data/inv_fold_{int((i/4)+1)}.csv", index=False)
-                merged_val_set.to_csv(f"data/fold_{int((i/4)+1)}.csv", index=False)
+                merged_val_set.to_csv(f"data/partition_{int((i/4)+1)}.csv", index=False)
 
 
                 
