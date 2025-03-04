@@ -2,9 +2,9 @@
 
 Enrollment forcasting is a repository containing machine learning models to predict future enrollment of WWU computer science and computer science adjacent courses. 
 
-# Installation
+## Installation
 
-## Conda Setup for Linux Terminal  
+### Conda Setup for Linux Terminal  
 
 - **Download Conda package from the internet:**  
   `wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh`  
@@ -36,7 +36,7 @@ Enrollment forcasting is a repository containing machine learning models to pred
 - **Install required Python libraries:**  
   `pip install torch torchvision matplotlib scikit-learn pandas PyYAML wandb`
 
-# Jupyter Notebook  
+## Jupyter Notebook  
 
 - **Install Jupyter Notebook:**  
   `pip install jupyter`  
