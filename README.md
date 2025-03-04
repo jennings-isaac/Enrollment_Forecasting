@@ -64,3 +64,6 @@ This repo contains 2 models. One using sklearn MLP regressor and the other using
 ## Visualizations
 
 There are visualizations that can be created using the Client_Tutorial, with the raw code in visualizations.py.
+
+![image](https://github.com/user-attachments/assets/a866994a-a221-4b29-b945-9312f8507b65)
+
