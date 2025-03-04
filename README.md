@@ -67,3 +67,9 @@ There are visualizations that can be created using the Client_Tutorial, with the
 
 ![image](https://github.com/user-attachments/assets/a866994a-a221-4b29-b945-9312f8507b65)
 
+##Contacts
+
+[Conor Enfield](conore@live.com)
+[Isaac Jennings](jenningi2@wwu.edu)
+[Dang Hang Quoc Nguyen](dangn2@wwu.edu)
+[Piper Wolters](wolterp@wwu.edu)
