@@ -57,9 +57,52 @@ Enrollment forcasting is a repository containing machine learning models to pred
   - This ensures that the notebook has access to the installed packages.  
   - Place the notebook in the **root of your repository** so you can easily import submodules.  
 
-## Training
+# Training Section  
 
-This repo contains 2 machine learning models. One using sklearn MLP regressor and the other using a pytorch DNN. Both take in the same curated data, and predict the actual enrollment for a given class. To use new data from the WWU registrar, use the Client_Tutorial and plug in the new data. To change or upgrade the models or data curation use –INSERT NAME OF QUOCS NOTEBOOK–.
+We train two categories of models in this repository: **Sklearn** and **Pytorch**.  
+Both use the **Model** and **Trainer** architecture.  
+
+## Sklearn Models  
+In the `sklearn_model`, there are two options:  
+- **MLPRegressor**  
+- **Random Forest**  
+
+### Sklearn MLPRegressor Hyperparameters  
+```python
+hidden_layer_sizes = (100,)
+activation = 'tanh'
+solver = 'adam'
+learning_rate = 'adaptive'
+max_iter = 1000
+alpha = 0.0001
+```
+
+### Sklearn Random Forest Hyperparameters  
+```python
+max_depth = 20
+min_samples_leaf = 1
+min_samples_split = 10
+n_estimators = 200
+random_state = 42
+```
+These hyperparameters were determined to be the best through **grid search**.  
+
+## Pytorch Model  
+In the `pytorch_model`, we implemented a single model:  
+- **RegressionDNN**  
+
+### TODO: Add Pytorch Hyperparameters  
+
+## Training  
+In `sklearn_trainer` and `pytorch_trainer`, the relevant model is called and trained using the given data.  
+
+To train using either of these models, run **`sklearn_model.py`** or **`pytorch_model.py`** from the terminal.  
+If using new data, ensure that:  
+- It follows the required format.  
+- It has been curated using our **curation file**.  
+
+For a **detailed explanation** of our pipeline from raw data to training, refer to **`Tutorial.ipynb`**.  
+
 
 ## Visualizations
 
