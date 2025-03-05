@@ -103,6 +103,30 @@ If using new data, ensure that:
 
 For a **detailed explanation** of our pipeline from raw data to training, refer to **`Tutorial.ipynb`**.  
 
+## Inference  
+
+To run inference using new data with a **pretrained model**, follow these steps:  
+
+### Data Formatting  
+First, the data must be formatted as:  
+**–TODO: Add Specific Formatting of Registrar Data–**  
+This data is assumed to be from the **WWU registrar**.  
+
+### Running Inference  
+In `inference.py` (**Rename Isaac’s notebook accordingly**):  
+1. Set the **path to the data**.  
+2. Choose one of the **three pretrained models**:  
+   - **Sklearn MLPRegressor**  
+   - **Sklearn Random Forest**  
+   - **Pytorch DNN**  
+
+#### TODO: Add Table of Available Model Weights  
+
+### Output  
+Once the correctly formatted data is provided, the selected model will:  
+- **Predict the actual enrollment** for the given classes.  
+- **Output performance metrics** to evaluate the predictions.  
+
 
 ## Visualizations
 
