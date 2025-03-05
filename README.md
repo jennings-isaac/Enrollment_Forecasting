@@ -38,7 +38,7 @@ THIS VISUAL PIPELINE IS INCORRECT, WILL BE CHANGED LATER
   `conda activate envname`  
 
 - **Install required Python libraries:**  
-  `pip install torch torchvision matplotlib scikit-learn pandas PyYAML wandb`
+  `pip install torch torchvision matplotlib scikit-learn pandas PyYAML wandb blob`
 
 ### Jupyter Notebook  
 
