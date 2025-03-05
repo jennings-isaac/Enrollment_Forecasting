@@ -57,17 +57,17 @@ Enrollment forcasting is a repository containing machine learning models to pred
   - This ensures that the notebook has access to the installed packages.  
   - Place the notebook in the **root of your repository** so you can easily import submodules.  
 
-# Training Section  
+## Training Section  
 
 We train two categories of models in this repository: **Sklearn** and **Pytorch**.  
 Both use the **Model** and **Trainer** architecture.  
 
-## Sklearn Models  
+### Sklearn Models  
 In the `sklearn_model`, there are two options:  
 - **MLPRegressor**  
 - **Random Forest**  
 
-### Sklearn MLPRegressor Hyperparameters  
+#### Sklearn MLPRegressor Hyperparameters  
 ```python
 hidden_layer_sizes = (100,)
 activation = 'tanh'
@@ -77,7 +77,7 @@ max_iter = 1000
 alpha = 0.0001
 ```
 
-### Sklearn Random Forest Hyperparameters  
+#### Sklearn Random Forest Hyperparameters  
 ```python
 max_depth = 20
 min_samples_leaf = 1
@@ -87,13 +87,13 @@ random_state = 42
 ```
 These hyperparameters were determined to be the best through **grid search**.  
 
-## Pytorch Model  
+### Pytorch Model  
 In the `pytorch_model`, we implemented a single model:  
 - **RegressionDNN**  
 
-### TODO: Add Pytorch Hyperparameters  
+#### TODO: Add Pytorch Hyperparameters  
 
-## Training  
+### Training  
 In `sklearn_trainer` and `pytorch_trainer`, the relevant model is called and trained using the given data.  
 
 To train using either of these models, run **`sklearn_model.py`** or **`pytorch_model.py`** from the terminal.  
