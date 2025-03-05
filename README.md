@@ -5,7 +5,7 @@ Enrollment forcasting is a repository containing machine learning models to pred
 
 ![image](https://github.com/user-attachments/assets/790a74aa-7c1c-4a39-995a-fb29214cec82)
 
-## Installation
+## 🔵 Installation
 
 ### Conda Setup for Linux Terminal  
 
@@ -57,7 +57,7 @@ Enrollment forcasting is a repository containing machine learning models to pred
   - This ensures that the notebook has access to the installed packages.  
   - Place the notebook in the **root of your repository** so you can easily import submodules.  
 
-## Training Section  
+## 🔵 Training Section  
 
 We train two categories of models in this repository: **Sklearn** and **Pytorch**.  
 Both use the **Model** and **Trainer** architecture.  
@@ -104,7 +104,6 @@ If using new data, ensure that:
 For a **detailed explanation** of our pipeline from raw data to training, refer to **`Tutorial.ipynb`**.  
 
 ## 🔵 Inference
-> ## Inference  
 To run inference using new data with a **pretrained model**, follow these steps:  
 
 ### Data Formatting  
@@ -128,12 +127,12 @@ Once the correctly formatted data is provided, the selected model will:
 - **Output performance metrics** to evaluate the predictions.  
 
 
-## Visualizations
+## 🔵 Visualizations
 
 There are visualizations that can be created using the Client_Tutorial, with the raw code in visualizations.py.
 
 ![image](https://github.com/user-attachments/assets/a866994a-a221-4b29-b945-9312f8507b65)
-## Contacts
+## 🔵 Contacts
 
 - [Conor Enfield](mailto:conore@live.com)
 - [Isaac Jennings](mailto:jenningi2@wwu.edu)
