@@ -57,7 +57,7 @@ Enrollment forcasting is a repository containing machine learning models to pred
   - This ensures that the notebook has access to the installed packages.  
   - Place the notebook in the **root of your repository** so you can easily import submodules.  
 
-## 🔵 Training Section  
+## 🔵 Training
 
 We train two categories of models in this repository: **Sklearn** and **Pytorch**.  
 Both use the **Model** and **Trainer** architecture.  
