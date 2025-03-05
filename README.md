@@ -104,7 +104,7 @@ If using new data, ensure that:
 For a **detailed explanation** of our pipeline from raw data to training, refer to **`Tutorial.ipynb`**.  
 
 ## 🔵 Inference
-
+> ## Inference  
 To run inference using new data with a **pretrained model**, follow these steps:  
 
 ### Data Formatting  
