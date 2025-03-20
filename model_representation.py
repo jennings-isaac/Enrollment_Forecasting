@@ -13,6 +13,7 @@ def get_category_from_dummy(row, prefix):
 
 def plot_results():
 
+    # Fetch the model from the joblib file and save it
     model_filename = 'sklearn_model.joblib'
     model = joblib.load(model_filename)
     
@@ -20,6 +21,7 @@ def plot_results():
     y_pred = evaluate_model(model, X_val)
     df = pd.read_csv(val_data_path)
 
+    # Calculate difference between true and predicted values
     df['Ground_Truth'] = y_val
     df['Predicted'] = y_pred
     df['Difference'] = abs(df['Ground_Truth'] - df['Predicted'])

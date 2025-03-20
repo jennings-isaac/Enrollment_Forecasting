@@ -2,8 +2,11 @@ from sklearn.neural_network import MLPRegressor
 from sklearn.ensemble import RandomForestRegressor
 
 class sklearnModel:
+
+    # initialize the model
     def __init__(self, input_dim, model_type):
 
+        # based on input, choose proper model
         self.model = None
         if model_type == 'mlp_regressor':
             
@@ -26,7 +29,7 @@ class sklearnModel:
                 random_state=42
             )
 
-
+        # if wanted, add better model here
         elif model_type == 'TODO2':
             print("and another sklearn model")
 

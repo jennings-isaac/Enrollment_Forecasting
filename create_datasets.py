@@ -32,14 +32,14 @@ def Create_Data():
     test_set.to_csv("data/test_set.csv", index=False)
 
 
-
+    # get quarters that will be used for training
     training_quarters = [key for key in quarter_data.keys() if key not in test_set_keys]
 
     
     random.shuffle(training_quarters)
     fold_indices = []
 
-
+    # Create partition dataset
     for i in range(0, len(training_quarters), 4):
         val_set = training_quarters[i: i+4]
         fold_indices.append(" ".join([file.replace("data/", "").replace(".csv", "") for file in val_set]))             
