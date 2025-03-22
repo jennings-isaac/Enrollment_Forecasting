@@ -90,9 +90,16 @@ These hyperparameters were determined to be the best through **grid search**.
 
 ### Pytorch Model  
 In the `pytorch_model`, we implemented a single model:  
-- **RegressionDNN**  
-
-#### TODO: Add Pytorch Hyperparameters  
+- **RegressionDNN**
+- 
+```
+input_size= 86
+hidden_sizes = [200, 200, 200, 200],
+learning_rate=0.0001
+batch_size=8,
+num_epochs=500
+patience=100,
+```
 
 ### Training  
 In `sklearn_trainer` and `pytorch_trainer`, the relevant model is called and trained using the given data.  
