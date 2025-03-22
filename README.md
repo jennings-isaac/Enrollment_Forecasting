@@ -60,7 +60,7 @@ THIS VISUAL PIPELINE IS INCORRECT, WILL BE CHANGED LATER
 
 
 ## 🔵 File Structure
-```
+
 ### **Tutorials & Documentation**
 - **`README.md`** – Main documentation file explaining the project.
 - **`Inference_Tutorial.ipynb`** – Notebook guiding users on how to perform inference using the trained model.
@@ -94,7 +94,7 @@ THIS VISUAL PIPELINE IS INCORRECT, WILL BE CHANGED LATER
 ### **Miscellaneous**
 - **`run_scripts.py`** – Main script for executing training or evaluation pipelines.
 - **`run_scripts.sh`** – Shell script to execute predefined model training and inference tasks.
-```
+
 
 
 
