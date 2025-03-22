@@ -74,19 +74,19 @@ THIS VISUAL PIPELINE IS INCORRECT, WILL BE CHANGED LATER
 - **`create_datasets.py`** – Script for creating datasets from raw data.
 - **`curation.py`** – Script for cleaning and curating data before model training.
 - **`dataset.py`** – Handles dataset loading, transformations, and visualization.
-- **`enrollment_dataset.py`** – Specialized dataset processing script for enrollment-related data.
+- **`enrollment_dataset.py`** – Dataset class for pytorch model.
 - **`transform_data.sh`** – Shell script for automating data transformation tasks.
 
 ### **Model Training**
-- **`pytorch_trainer.py`** – Script to train models using PyTorch.
-- **`pytorch_model.py`** – Defines the PyTorch model architecture.
-- **`sklearn_trainer.py`** – Script for training scikit-learn models.
-- **`sklearn_model.py`** – Defines the scikit-learn model architecture.
+- **`pytorch_trainer.py`** – Defines the PyTorch model architecture.  
+- **`pytorch_model.py`** – Script to train models using PyTorch.
+- **`sklearn_trainer.py`** – Defines the scikit-learn model architecture.
+- **`sklearn_model.py`** – Script for training scikit-learn models.
 - **`early_stopping.py`** – Implements early stopping for PyTorch training.
 - **`kfold_test.py`** – Script for performing k-fold cross-validation on the dataset.
 
 ### **Inference & Model Representation**
-- **`model_representation.py`** – Code to analyze and visualize model internals.
+- **`model_representation.py`** – Visualizations using model data.
 - **`visualizations.py`** – Script for generating visualizations of data and model performance.
 - **`run_scripts.py`** – Automates running different scripts in sequence.
 - **`run_scripts.sh`** – Shell script for executing predefined model training and inference tasks.
