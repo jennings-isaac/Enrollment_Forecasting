@@ -64,9 +64,8 @@ We train two categories of models in this repository: **Sklearn** and **Pytorch*
 Both use the **Model** and **Trainer** architecture.  
 
 ### Sklearn Models  
-In the `sklearn_model`, there are two options:  
-- **MLPRegressor**  
-- **Random Forest**  
+In the `sklearn_model`, there are one option:  
+- **MLPRegressor**    
 
 #### Sklearn MLPRegressor Hyperparameters  
 ```python
@@ -78,18 +77,10 @@ max_iter = 1000
 alpha = 0.0001
 ```
 
-#### Sklearn Random Forest Hyperparameters  
-```python
-max_depth = 20
-min_samples_leaf = 1
-min_samples_split = 10
-n_estimators = 200
-random_state = 42
-```
 These hyperparameters were determined to be the best through **grid search**.  
 
 ### Pytorch Model  
-In the `pytorch_model`, we implemented a single model:  
+In the `pytorch_model`, there is one option:  
 - **RegressionDNN**
 ```
 input_size= 86
@@ -101,9 +92,7 @@ patience=100,
 ```
 
 ### Training  
-In `sklearn_trainer` and `pytorch_trainer`, the relevant model is called and trained using the given data.  
-
-To train using either of these models, run **`sklearn_model.py`** or **`pytorch_model.py`** from the terminal.  
+To train new models the required code is in the Tutorial.ipynb file.  
 If using new data, ensure that:  
 - It follows the required format.  
 - It has been curated using our **curation file**.  
