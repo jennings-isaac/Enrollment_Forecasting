@@ -137,7 +137,7 @@ First, the data must be in a csv formatted with these columns:
 This data is assumed to be from the **WWU registrar**. Then, it will be run through curate to curate it to the format our model expects.
 
 ### Running Inference  
-In `inference.py` (**Rename Isaac’s notebook accordingly**):  
+In `Inference_Tutorial.py` (**Rename Isaac’s notebook accordingly**):  
 1. Set the **path to the data**.  
 2. Choose one of the **three pretrained models**:  
    - **Sklearn MLPRegressor**   
@@ -153,7 +153,7 @@ Once the correctly formatted data is provided, the selected model will:
 
 ## 🔵 Visualizations
 
-There are visualizations that can be created using the Client_Tutorial, with the raw code in visualizations.py.
+There are visualizations that can be created using the Inference_Tutorial, with the raw code in visualizations.py.
 
 ![image](https://github.com/user-attachments/assets/a866994a-a221-4b29-b945-9312f8507b65)
 ## 🔵 Contacts
