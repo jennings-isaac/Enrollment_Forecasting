@@ -56,7 +56,47 @@ THIS VISUAL PIPELINE IS INCORRECT, WILL BE CHANGED LATER
 - **Important Notes:**  
   - Ensure that your Conda environment, created in the steps above, is **activated** before starting Jupyter Notebook.  
   - This ensures that the notebook has access to the installed packages.  
-  - Place the notebook in the **root of your repository** so you can easily import submodules.  
+  - Place the notebook in the **root of your repository** so you can easily import submodules.
+
+
+## 🔵 File Structure
+```
+### **Tutorials & Documentation**
+- **`README.md`** – Main documentation file explaining the project.
+- **`Inference_Tutorial.ipynb`** – Notebook guiding users on how to perform inference using the trained model.
+- **`Tutorial.ipynb`** – General tutorial covering data processing, model training, and evaluation.
+
+### **Model Files**
+- **`best_model.pth`** – Saved PyTorch model checkpoint after training.
+- **`sklearn_model.joblib`** – Trained scikit-learn model saved in joblib format.
+
+### **Data Processing & Preparation**
+- **`create_datasets.py`** – Script for creating datasets from raw data.
+- **`curation.py`** – Script for cleaning and curating data before model training.
+- **`dataset.py`** – Handles dataset loading, transformations, and visualization.
+- **`enrollment_dataset.py`** – Specialized dataset processing script for enrollment-related data.
+- **`transform_data.sh`** – Shell script for automating data transformation tasks.
+
+### **Model Training**
+- **`pytorch_trainer.py`** – Script to train models using PyTorch.
+- **`pytorch_model.py`** – Defines the PyTorch model architecture.
+- **`sklearn_trainer.py`** – Script for training scikit-learn models.
+- **`sklearn_model.py`** – Defines the scikit-learn model architecture.
+- **`early_stopping.py`** – Implements early stopping for PyTorch training.
+- **`kfold_test.py`** – Script for performing k-fold cross-validation on the dataset.
+
+### **Inference & Model Representation**
+- **`model_representation.py`** – Code to analyze and visualize model internals.
+- **`visualizations.py`** – Script for generating visualizations of data and model performance.
+- **`run_scripts.py`** – Automates running different scripts in sequence.
+- **`run_scripts.sh`** – Shell script for executing predefined model training and inference tasks.
+
+### **Miscellaneous**
+- **`run_scripts.py`** – Main script for executing training or evaluation pipelines.
+- **`run_scripts.sh`** – Shell script to execute predefined model training and inference tasks.
+```
+
+
 
 ## 🔵 Training
 
