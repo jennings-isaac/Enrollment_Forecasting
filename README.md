@@ -104,7 +104,7 @@ We train two categories of models in this repository: **Sklearn** and **Pytorch*
 Both use the **Model** and **Trainer** architecture.  
 
 ### Sklearn Models  
-In the `sklearn_model`, there are one option:  
+In the `sklearn_model`, there is one option:  
 - **MLPRegressor**    
 
 #### Sklearn MLPRegressor Hyperparameters  
