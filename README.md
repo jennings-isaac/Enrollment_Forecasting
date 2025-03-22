@@ -6,7 +6,6 @@ Enrollment forcasting is a repository containing machine learning models to pred
 <img width="549" alt="image" src="https://github.com/user-attachments/assets/9c3e213f-0ae8-4543-bb37-b668fb98b471" />
 
 
-THIS VISUAL PIPELINE IS INCORRECT, WILL BE CHANGED LATER
 ## 🔵 Installation
 
 ### Conda Setup for Linux Terminal  
