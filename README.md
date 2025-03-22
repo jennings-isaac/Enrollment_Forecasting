@@ -142,8 +142,7 @@ In `Inference_Tutorial.py`:
 2. Choose one of the **two pretrained models**:  
    - **Sklearn MLPRegressor**   
    - **Pytorch DNN**  
-
-#### TODO: Add Table of Available Model Weights  
+ 
 
 ### Output  
 Once the correctly formatted data is provided, the selected model will:  
