@@ -115,7 +115,25 @@ To run inference using new data with a **pretrained model**, follow these steps:
 
 ### Data Formatting  
 First, the data must be formatted as:  
-**–TODO: Add Specific Formatting of Registrar Data–**  
+-TERM
+-CRN
+-SUBJECT
+-COURSE_NUMBER
+-TITLE
+-ACTUAL_ENROLL
+-CAPENROLL
+-PRIMARY_BEGIN_TIME
+-PRIMARY_END_TIME
+-U
+-M
+-T
+-W
+-R
+-F
+-S
+-PRIMARY_INSTRUCTOR_TENURE_CODE
+-CAMPUS
+
 This data is assumed to be from the **WWU registrar**.  
 
 ### Running Inference  
