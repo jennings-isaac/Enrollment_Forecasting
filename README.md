@@ -114,7 +114,7 @@ For a **detailed explanation** of our pipeline from raw data to training, refer 
 To run inference using new data with a **pretrained model**, follow these steps:  
 
 ### Data Formatting  
-First, the data must be formatted as:  
+First, the data must be in a csv formatted with these columns:  
 - TERM
 - CRN
 - SUBJECT
@@ -134,14 +134,13 @@ First, the data must be formatted as:
 - PRIMARY_INSTRUCTOR_TENURE_CODE
 - CAMPUS
 
-This data is assumed to be from the **WWU registrar**.  
+This data is assumed to be from the **WWU registrar**. Then, it will be run through curate to curate it to the format our model expects.
 
 ### Running Inference  
 In `inference.py` (**Rename Isaac’s notebook accordingly**):  
 1. Set the **path to the data**.  
 2. Choose one of the **three pretrained models**:  
-   - **Sklearn MLPRegressor**  
-   - **Sklearn Random Forest**  
+   - **Sklearn MLPRegressor**   
    - **Pytorch DNN**  
 
 #### TODO: Add Table of Available Model Weights  
