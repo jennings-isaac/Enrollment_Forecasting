@@ -91,7 +91,6 @@ These hyperparameters were determined to be the best through **grid search**.
 ### Pytorch Model  
 In the `pytorch_model`, we implemented a single model:  
 - **RegressionDNN**
-- 
 ```
 input_size= 86
 hidden_sizes = [200, 200, 200, 200],
