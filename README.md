@@ -137,9 +137,9 @@ First, the data must be in a csv formatted with these columns:
 This data is assumed to be from the **WWU registrar**. Then, it will be run through curate to curate it to the format our model expects.
 
 ### Running Inference  
-In `Inference_Tutorial.py` (**Rename Isaac’s notebook accordingly**):  
+In `Inference_Tutorial.py`:  
 1. Set the **path to the data**.  
-2. Choose one of the **three pretrained models**:  
+2. Choose one of the **two pretrained models**:  
    - **Sklearn MLPRegressor**   
    - **Pytorch DNN**  
 
